@@ -11,29 +11,38 @@ const PageContainer = styled.div`
 `
 
 const Landing = styled.div`
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
     height: 100vh;
+    background: linear-gradient(70deg, rgba(80,2,70,1) 0%, rgba(126,5,110,1) 50%, rgba(80,2,70,1) 100%);
 `
 
 const LandingFirstContainer = styled.div`
     margin: 0 auto;
-    width: 100%;
+    width: 80%;
     max-width: 1200px;
     top: 99px;
-    padding: 12rem 0;
     height: 100%;
     display: flex;
 `
 
 const LandingTitleContainer = styled.div`
+    padding: 12rem 0;
     width: 50%;
     height: 100%;
 `
 
 const LandingPhotoContainer = styled.div`
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
     width: 50%;
     height: 100%;
+`
+
+const MyPhoto = styled.img`
+    display: block;
+    width: 100%;
 `
 
 const MyProfession = styled.h2`
@@ -62,7 +71,7 @@ const Home = () => {
                         </MyProfession>
                     </LandingTitleContainer>
                     <LandingPhotoContainer>
-                        Photo
+                        <MyPhoto src={process.env.PUBLIC_URL + '/taha.png'} alt="Taha Boyraz"></MyPhoto>
                     </LandingPhotoContainer>
                 </LandingFirstContainer>
             </Landing>
