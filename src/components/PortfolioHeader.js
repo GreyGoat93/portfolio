@@ -5,7 +5,7 @@ import Navigation from './Navigation';
 
 const Header = styled.header`
     width: 100%;
-    height: 64px;
+    height: 74px;
     background-color: ${FIRST_COLOR};
 `
 

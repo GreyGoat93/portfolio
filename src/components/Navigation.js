@@ -11,9 +11,12 @@ const links = [
 ]
 
 const List = styled.ul`
-    display: flex;
+    display: none;
     height: 100%;
     list-style-type: none;
+    @media(min-width: 768px){
+        display: flex;
+    }
 `
 
 const ListItem = styled.li`

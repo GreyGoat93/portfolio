@@ -19,30 +19,65 @@ const Landing = styled.div`
 
 const LandingFirstContainer = styled.div`
     margin: 0 auto;
+    padding-top: 0px;
     width: 80%;
-    max-width: 1200px;
-    top: 99px;
     height: 100%;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @media(min-width: 768px){
+        max-width: 1200px;
+        padding: 5rem 0;
+        justify-content: initial;
+        flex-direction: row;
+    }
 `
 
 const LandingTitleContainer = styled.div`
-    padding: 12rem 0;
-    width: 50%;
-    height: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 30%;
+    @media(min-width: 768px){
+        height: 100%;
+        width: 50%;
+        text-align: left;
+        justify-content: flex-start;
+    }
+`
+
+const TitleInsideContainer = styled.div`
+    
 `
 
 const LandingPhotoContainer = styled.div`
+    margin-top: 1.2rem;
     display: flex;
-    align-items: flex-end;
     justify-content: center;
-    width: 50%;
-    height: 100%;
+    align-items: flex-start;
+    width: 100%;
+    height: 20%;
+    @media(min-width: 768px){
+        height: 100%;
+        width: 50%;
+        justify-content: flex-end;
+        align-items: center;
+    }
 `
 
 const MyPhoto = styled.img`
     display: block;
-    width: 100%;
+    object-fit: cover;
+    object-position: center center;
+    border-radius: 100%;
+    width: 200px;
+    height: 200px;
+    @media(min-width: 768px){
+        width: 270px;
+        height: 270px;
+    }
 `
 
 const MyProfession = styled.h2`
@@ -61,17 +96,22 @@ const Home = () => {
     return (
         <PageContainer>
             <Landing>
-                <LandingFirstContainer>
+                <LandingFirstContainer data-e>
                     <LandingTitleContainer>
-                        <MyName>
-                            Taha Boyraz
-                        </MyName>
-                        <MyProfession>
-                            Front-end Developer
-                        </MyProfession>
+                        <TitleInsideContainer>
+                            <MyName>
+                                Taha Boyraz
+                            </MyName>
+                            <MyProfession>
+                                Front-end Developer
+                            </MyProfession>
+                        </TitleInsideContainer>
                     </LandingTitleContainer>
                     <LandingPhotoContainer>
-                        <MyPhoto src={process.env.PUBLIC_URL + '/taha.png'} alt="Taha Boyraz"></MyPhoto>
+                        <MyPhoto 
+                        src={process.env.PUBLIC_URL + '/tahaa.jpeg'} 
+                        alt="Taha Boyraz">
+                        </MyPhoto>
                     </LandingPhotoContainer>
                 </LandingFirstContainer>
             </Landing>
