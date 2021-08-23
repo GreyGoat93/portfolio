@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { THIRD_COLOR } from "../common/colorPalette"
+import { FIRST_COLOR, THIRD_COLOR } from "../common/colorPalette"
 
 import { Link } from "react-router-dom"
 
@@ -33,9 +33,13 @@ const ListItem = styled.li`
         display: flex;
         align-items: center;
         justify-content: center;
+        background-size: 100% 200%; 
+        background-image: linear-gradient(to bottom, ${FIRST_COLOR} 50%, ${THIRD_COLOR} 50%);
+        transition: background-position .2s ease-in-out, color .5s ease-in-out;
 
         &:hover {
-            background-color: #913322
+            background-position: 0 100%;
+            color: ${FIRST_COLOR};
         }
     }
 `

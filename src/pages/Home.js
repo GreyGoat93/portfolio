@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { FIFTH_COLOR, SECOND_COLOR } from "../common/colorPalette";
+import { FIFTH_COLOR, THIRD_COLOR } from "../common/colorPalette";
 
 const PageContainer = styled.div`
     width: 100%;
@@ -10,21 +10,23 @@ const PageContainer = styled.div`
     z-index: -1;
 `
 
-const Landing = styled.div`
+const Landing = styled.section`
     width: 100%;
     margin: 0 auto;
     height: 100vh;
+    min-height: 100vh;
     background: linear-gradient(70deg, rgba(80,2,70,1) 0%, rgba(126,5,110,1) 50%, rgba(80,2,70,1) 100%);
 `
 
 const LandingFirstContainer = styled.div`
     margin: 0 auto;
-    padding-top: 0px;
     width: 80%;
     height: 100%;
+    min-height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
+
     @media(min-width: 768px){
         max-width: 1200px;
         padding: 5rem 0;
@@ -37,14 +39,21 @@ const LandingTitleContainer = styled.div`
     display: flex;
     text-align: center;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
     height: 30%;
+
     @media(min-width: 768px){
         height: 100%;
         width: 50%;
         text-align: left;
         justify-content: flex-start;
+        align-items: center;
+        transition: transform 0.2s;
+
+        &:hover{
+            transform: rotateY(30deg) rotateX(5deg) rotateZ(-5deg);
+        }
     }
 `
 
@@ -59,6 +68,7 @@ const LandingPhotoContainer = styled.div`
     align-items: flex-start;
     width: 100%;
     height: 20%;
+
     @media(min-width: 768px){
         height: 100%;
         width: 50%;
@@ -74,29 +84,62 @@ const MyPhoto = styled.img`
     border-radius: 100%;
     width: 200px;
     height: 200px;
+    background-color: ${FIFTH_COLOR};
+
     @media(min-width: 768px){
         width: 270px;
         height: 270px;
+        transition: transform 0.2s;
+
+        &:hover{
+            transform: rotateY(30deg) rotateX(-5deg) rotateZ(5deg);
+        }
     }
 `
 
 const MyProfession = styled.h2`
-    font-size: 64px;
-    color: ${SECOND_COLOR};
-    line-height: 64px;
+    color: ${THIRD_COLOR};
+    font-size: 48px;
+    line-height: 48px;
+    width: 400px;
+
+    @media(min-width: 768px){
+        font-size: 64px;
+        line-height: 64px;
+    }
 `
 
 const MyName = styled.h3`
-    font-size: 24px;
-    height: 24px;
+    font-size: 16px;
+    height: 16px;
     color: ${FIFTH_COLOR};
+    
+    @media(min-width: 768px){
+        font-size: 24px;
+        height: 24px;
+    }
+`
+
+const TextDefinesMeSection = styled.section`
+    height: 100vh;
+    min-height: 100vh;
+    width: 100%;
+`
+
+const TextDefinesMeContainer = styled.div`
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 5rem 0;
+    font-weight: 700;
+    color: ${FIFTH_COLOR}
 `
 
 const Home = () => {
     return (
         <PageContainer>
             <Landing>
-                <LandingFirstContainer data-e>
+                <LandingFirstContainer>
                     <LandingTitleContainer>
                         <TitleInsideContainer>
                             <MyName>
@@ -115,6 +158,11 @@ const Home = () => {
                     </LandingPhotoContainer>
                 </LandingFirstContainer>
             </Landing>
+            <TextDefinesMeSection>
+                <TextDefinesMeContainer>
+                    hi
+                </TextDefinesMeContainer>
+            </TextDefinesMeSection>
         </PageContainer>
     )
 }
